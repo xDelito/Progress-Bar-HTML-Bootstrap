@@ -1,0 +1,26 @@
+<div class="progress">
+  <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">Conectando...</div>
+</div>
+
+
+<script>
+// Obtén la barra de progreso
+var progressBar = document.querySelector('.progress-bar');
+
+// Establece el ancho inicial de la barra de progreso en 0
+progressBar.style.width = '0%';
+
+// Ejecuta la función updateProgress cada segundo
+var interval = setInterval(updateProgress, 1000);
+
+// La función updateProgress se ejecutará cada segundo
+function updateProgress() {
+  // Aumenta el ancho de la barra de progreso en 3.3333%
+  progressBar.style.width = progressBar.clientWidth + 3.3333 + '%';
+
+  // Si el ancho de la barra de progreso es mayor o igual al 100%, detiene el intervalo
+  if (progressBar.clientWidth >= 100) {
+    clearInterval(interval);
+  }
+}
+</script>
